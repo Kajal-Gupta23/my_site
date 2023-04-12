@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+    My Blog
+{% endblock %}
+
+{% block css_files %}
+    <link rel="stylesheet" href="{% static "blog/post.css" %}">
+    <link rel="stylesheet" href="{% static "blog/index.css" %}">
+{% endblock %}
+
+{% block content %}
+    
+    <section id="welcome">
+        <header>
+            <img src="{% static "blog/images/profile.jpg"%}" alt="Kajal- The Author Of This Blog">
+            <h2> Kajal Gupta's Blog</h2>
+        </header>
+        <p> Hii I am Kajal and I love to blog</p>
+    </section>
+
+    <section id="latest-posts">
+        <h2> My recent thoughts </h2>
+
+        <ul>
+            {% include "blog/include/post.html" %}
+        </ul>
+    </section>
+
+    <section id="about">
+        <h2>What I do</h2>
+        <p>I enjoy exploring new things</p>
+        <p>My goal is to keep on growing</p>
+    </section>
+
+{% endblock %}
